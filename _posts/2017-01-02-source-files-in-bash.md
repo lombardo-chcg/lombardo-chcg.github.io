@@ -3,6 +3,7 @@ layout: post
 title:  "source files in bash"
 date:   2017-01-02 22:02:17
 categories: tools
+excerpt: "bash's source command, and a custom shell script to create Jekyll posts"
 tags:
   - bash
   - dependencies
