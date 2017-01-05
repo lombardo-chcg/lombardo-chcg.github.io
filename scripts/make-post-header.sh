@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 function makePostHeader() {
   [[ $# -ne 1 ]] && { echo "makePostHeader: Must supply name of post as string passed to script" >&2; exit 1; }
@@ -11,8 +11,9 @@ layout: post
 title:  \"$postTitle\"
 date:   $postDate
 categories:
+excerpt:
 tags:
-
+  -
 ---"
 
 }
