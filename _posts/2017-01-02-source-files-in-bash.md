@@ -16,9 +16,9 @@ Basically this means include some external code that can be run within the scrip
 This is done in nodeJS and Java with `import` and Ruby with `require`
 
 With bash, it is `source`:
-```
+{% highlight bash %}
 source scripts/make-post-header.sh
-```
+{% endhighlight %}
 with the `scripts/make-post-header.sh` providing the relative path to the file.
 
 The most interesting part for me was that while the main script required a
