@@ -33,7 +33,7 @@ hello'
 
 or in my example using a file and variables instead of piping in input:
 {% highlight bash %}
-mv finalFile > tempFile
+mv finalFile tempFile
 
 sed "15a\\
   $textStoredAsBashVar\\
