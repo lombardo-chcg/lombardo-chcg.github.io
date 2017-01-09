@@ -10,13 +10,13 @@ layout: default
 
   <ul class="post-list">
     {% for post in site.posts %}
-      <li>
+      <li style="border:1px solid grey;border-radius:15px;padding:10px;">
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
         <h2>
           <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         </h2>
-          <i>{{ post.excerpt }}</i>
+          <h5><i>{{post.excerpt}}</i></h5>
       </li>
     {% endfor %}
   </ul>
