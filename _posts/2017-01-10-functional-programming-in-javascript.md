@@ -17,6 +17,6 @@ It's a great book and I plan to share more knowledge gleaned from it.  For now t
 
 > Functional programming falls under the umbrella of declarative programming paradigms: it's a paradigm that expresses a set of operations without revealing how they're implemented or how data flows through them
 
-He provides an example of squaring all the numbers in an array.  In is the classic imperative style, it is a `for` loop where the programmer tells the computer in painful details how to perform the task. The programmer has to keep track of a counter, access a collection by index to mutate the data (possibly corrupting other parts of the application that depend on that data), and some other annoying things.
+He provides an example of squaring all the numbers in an array.  In the classic imperative style, it is a `for` loop where the programmer tells the computer (in painfully verbose detail) how to perform the task. The programmer has to keep track of a counter, access a collection by index to mutate the data (possibly corrupting other parts of the application that depend on that data), and some other annoying things.
 
-Compare to a functional implementation using the `map` function, where we call `map` on a collection and provide a function with the desired behavior.  By abstracting away the implementation of the looping procedure to the map function, we are left with cleaner, more readable and more reusable code.
+Compare to a functional implementation using the `map` function, where we call `map` on a collection and provide a function that encapsulates the behavior we want to perform on each item.  By abstracting away the implementation of the looping procedure to the map function, we are left with cleaner, more readable and more reusable code.
