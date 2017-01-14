@@ -1,5 +1,14 @@
 #!/bin/bash
 
 bundle exec jekyll serve > /dev/null &
-sleep 2
-open -a /Applications/Google\ Chrome.app http://localhost:4000/
+# kill it:
+# ps aux | grep jekyll
+# kill -9 <jekyll_pid>
+
+sleep 1
+
+# on my linux box, open jekyll site in firefox
+[[ $OSTYPE == "linux-gnu" ]] && { firefox http://localhost:4000/ 1>/dev/null 2>&1 & }
+
+# on my mac, open in chrome
+[[ $uname == "Darwin" ]] && { open -a /Applications/Google\ Chrome.app http://localhost:4000/; }
