@@ -18,7 +18,7 @@ In this example, I am reading from a JSON document and mapping the data to a bas
 
 [*make sure to install jq if you want to follow along*](https://stedolan.github.io/jq/download/)
 
-JSON example
+contents of example.json file
 {% highlight bash %}
 {
    "widget":{
@@ -42,7 +42,7 @@ $> jq -r ".widget.text" < "example.json"
 }
 {% endhighlight %}
 
-nice.  now let's pipe that into beautiful JSON into the `to_entries` jq command which gives us convenient access to the keys and values
+nice.  now let's pipe that beautiful JSON into the `to_entries` jq command which gives us convenient access to the keys and values
 {% highlight bash %}
 $> jq -r ".widget.text|to_entries|.[]" < "example.json"
 
