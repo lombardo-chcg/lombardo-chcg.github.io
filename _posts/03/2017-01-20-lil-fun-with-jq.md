@@ -31,42 +31,42 @@ contents of example.json file
 }
 {% endhighlight %}
 
-let's access the object at widget.text
+At the command line, let's access the object at widget.text:
 {% highlight bash %}
-$> jq -r ".widget.text" < "example.json"
+jq -r ".widget.text" < "example.json"
 
-{
-  "data": "Click Here",
-  "size": 36,
-  "style": "bold"
-}
+#=> {
+#=>   "data": "Click Here",
+#=>   "size": 36,
+#=>   "style": "bold"
+#=> }
 {% endhighlight %}
 
 nice.  now let's pipe that beautiful JSON into the `to_entries` jq command which gives us convenient access to the keys and values
 {% highlight bash %}
 $> jq -r ".widget.text|to_entries|.[]" < "example.json"
 
-{
-  "key": "data",
-  "value": "Click Here"
-}
-{
-  "key": "size",
-  "value": 36
-}
-{
-  "key": "style",
-  "value": "bold"
-}
+#=> {
+#=>   "key": "data",
+#=>   "value": "Click Here"
+#=> }
+#=> {
+#=>   "key": "size",
+#=>   "value": 36
+#=> }
+#=> {
+#=>   "key": "style",
+#=>   "value": "bold"
+#=> }
 {% endhighlight %}
 
-now let's use jq map to map those keys and values to single line strings, with the key/value pair separated by an `=` sign
+Now let's use jq's map functionality to map those keys and values to single line strings, with the key/value pair separated by an `=` sign
 {% highlight bash %}
 $> jq -r ".widget.text|to_entries|map(\"\(.key)=\(.value)\")|.[]" < "example.json"
 
-data=Click Here
-size=36
-style=bold
+#=> data=Click Here
+#=> size=36
+#=> style=bold
 {% endhighlight %}
 
 (gnarly syntax... I know.  it's just for escaping the `"` signs ).
