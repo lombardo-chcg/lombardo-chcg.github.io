@@ -2,7 +2,7 @@
 layout: post
 title:  "kernel tuning"
 date:   2017-01-17 22:14:16
-categories: "mixed bag"
+categories: "mixed-bag"
 excerpt: "fun facts about low latency trading systems"
 tags:
   - "c++"
