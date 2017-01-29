@@ -1,4 +1,4 @@
 #!/bin/bash
 echo "goodnight, sweet Jekyll..."
 
-ps aux | grep jekyll | grep -v grep | cut -d' ' -f2 | xargs kill -9
+ps aux | grep jekyll | grep -v grep | awk  '{print $2}' | xargs kill -9

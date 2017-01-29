@@ -51,7 +51,7 @@ and in bash:
 {% highlight bash %}
 # WARNING! don't run kill commands copied from the internet on your system!
 
-ps aux | grep jekyll | grep -v grep | cut -d' ' -f2 | xargs kill -9
+ps aux | grep jekyll | grep -v grep | awk  '{print $2}' | xargs kill -9
 {% endhighlight %}
 
 --
