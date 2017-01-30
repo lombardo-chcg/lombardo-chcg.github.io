@@ -47,7 +47,7 @@ if [[ $openEditor ]]; then
 # TODO allow editor name to be passed in, if not, use system default $EDITOR or vi
 # [[ $editorName ]] && { $editorName "$fileLocation/$fileName"; return; }
 
-  atom "$fileLocation/$fileName"
+  vi "$fileLocation/$fileName"
 fi
 
 exit 0
