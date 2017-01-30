@@ -19,9 +19,10 @@ Apparently I am not the first one for which it clicked.  The folks over at Herok
 The 3rd Factor is exactly what I realized after refactoring the above-mentioned app.  Here are the highlights of the 3rd factor:
 
 **III.  Config**
-* Apps sometimes store config as constants in the code.  This is a violation of twelve-factor, which requires strict separation of config from code.
-* The twelve-factor app stores config in environment variables.
-* Environmental Variables (env vars) are granular controls
+
+- Apps sometimes store config as constants in the code.  This is a violation of twelve-factor, which requires strict separation of config from code.
+- The twelve-factor app stores config in environment variables.
+- Environmental Variables (env vars) are granular controls
 
 That last one is especially important.  It means that each external dependency is specified on a individual level.  This is in opposition to the model of grouping all dependencies into a single block, such as "development" or "production".  Grouping in env blocks leaves the application open to the same issues I mentioned above, mainly a fragile state and lack of flexibility.  It cancels out the effectiveness of extrapolating the dependencies to begin with.
 
