@@ -37,7 +37,7 @@ Anything that produces a text output can be fed into `grep` in this manner.
 
 --
 
-When I'm writing these blog posts, I run the Jekyll server in the background to check formatting before I commit and push.  This means I have to locate the process and kill it when I'm done.  That is a great example of piping output to get a result.  
+When I'm writing these blog posts, I run the Jekyll server in the background to check formatting before I commit and push.  This means I have to locate the process and kill it when I'm done.  Finding and killing a process is a great example of a chain of commands that can be piped together to form a simple program.  
 
 Here's the chain in plain English:
 
