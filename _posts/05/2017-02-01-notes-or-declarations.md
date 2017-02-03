@@ -16,7 +16,7 @@ For example, here's a nasty looking nonsense conditional:
 
 {% highlight javascript %}
 function proceedWithPurchase(cart, user) {
-  if ((cart.accessories.length > 0 && cart.accessories.inventory >= cart.total) || user.credit > cart.total)  {
+  if ((cart.accessories.length > 0 && cart.accessories.inventory >= cart.total) || user.credit > cart.total && user.credit.valid)  {
     cart.process()
   }
 }
@@ -27,13 +27,13 @@ Let's discuss two ways to fix this code.  First, add comment to explain what is 
 {% highlight javascript %}
 function proceedWithPurchase(cart, user) {
   // if the cart is valid or if the user has valid store credit
-  if ((cart.accessories.length > 0 && cart.accessories.inventory >= cart.total) || user.credit > cart.total)  {
+  if ((cart.accessories.length > 0 && cart.accessories.inventory >= cart.total) || user.credit > cart.total && user.credit.valid)  {
     cart.process()
   }
 }
 {% endhighlight %}
 
-Or, refactor the conditions out to declarative helper functions that return booleans.
+Or, refactor the conditions out to declarative helper functions that return booleans:
 
 {% highlight javascript %}
 function proceedWithPurchase(cart, user) {
