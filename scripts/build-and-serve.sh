@@ -1,11 +1,20 @@
 #!/bin/bash
 
 bundle exec jekyll serve > /dev/null &
-# kill it:
-# ps aux | grep jekyll
-# kill -9 <jekyll_pid>
 
-sleep 2
+waitExpression=1
+
+checkJekyllServer() {
+  curl -s localhost:4000/health | grep -q "<HEAD>"
+  exitCode=$?
+  [[ exitCode -eq 0 ]] && { waitExpression=0; }
+}
+
+until [[  $waitExpression -eq 0 ]]; do
+  echo "."
+  sleep 1
+  checkJekyllServer
+done
 
 # on my linux box, open jekyll site in firefox
 [[ $OSTYPE == "linux-gnu" ]] && { firefox http://localhost:4000/ 1>/dev/null 2>&1 & }
