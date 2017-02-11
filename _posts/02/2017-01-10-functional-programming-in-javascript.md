@@ -2,7 +2,7 @@
 layout: post
 title:  "functional programming in javascript"
 date:   2017-01-10 22:29:40
-categories: javascript
+categories: languages
 excerpt: some words of wisdom from Luis Atencio
 tags:
   - functional programming

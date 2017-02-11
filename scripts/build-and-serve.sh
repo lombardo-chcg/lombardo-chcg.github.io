@@ -8,7 +8,7 @@ waitExpression=1
 count=0
 
 checkJekyllServer() {
-  [[ count -eq 10 ]] && { echo -e "\nJekyll failed to start (waited 10 seconds)"; exit 1; }
+  [[ count -eq 15 ]] && { echo -e "\nJekyll failed to start (waited 10 seconds)"; exit 1; }
 
   curl -s localhost:4000/health | grep -q "<HEAD>"
   exitCode=$?
