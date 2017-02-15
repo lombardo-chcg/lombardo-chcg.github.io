@@ -16,4 +16,4 @@ tags:
 * `npmrc`
 * `vimrc`
 
-The `rc` file extension has a long lineage, dating back to the 1960s [according to The Jargon File](http://www.catb.org/jargon/html/R/rc-file.html).  They are configuration commands for a system or application to be run at start time.  These run commands got shortened to *runcom* and then to *rc* files which we see today. 
+The `rc` file extension has a long lineage, dating back to the 1960s [according to The Jargon File](http://www.catb.org/jargon/html/R/rc-file.html).  They contain configuration commands for a system or application to be run at start time.  These run commands got shortened to *runcom* and then to *rc* files which we see today. 
