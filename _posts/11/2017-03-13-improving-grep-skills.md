@@ -8,7 +8,7 @@ tags:
   - bash
 ---
 
-Found myself needing to search a large directory for a string, not knowing or caring about the capitalization of the string.  Of course there's a flag for that:
+Found myself needing to search a large directory for a string, not knowing or caring about the capitalization of the string.  Of course there's a flag for that: `-i`
 
 {% highlight bash %}
 grep -irn iDonTcAReaboutTheCaSe directory_name/
@@ -22,4 +22,4 @@ The `i` for case-insensitive is common in RegEx pattern matching:
 "lets make all the t's uppercase".replace(/t/gi, 'T');
 {% endhighlight %}
 
-This is a JavaScript sample that does a **g**lobal, case-**i**nsensitive replacement of `t` to `T` in the target string.
+This is a JavaScript sample that does a **g**lobal (aka all occurrences), case-**i**nsensitive replacement of `t` to `T` in the target string.
