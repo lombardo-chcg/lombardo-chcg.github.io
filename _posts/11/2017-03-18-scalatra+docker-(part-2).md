@@ -10,9 +10,13 @@ tags:
   - docker
 ---
 
+[Here's a github repo which will track this project](https://github.com/lombardo-chcg/scalatra-docker)
+
+--
+
 # Part 2: Add JSON support
 
-[In part one]() we kickstarted a basic Scalatra web services app.  Now we will add JSON support so it can act like a standard web API.
+[In Part 1]({{ full_base_url }}/web-dev/2017/03/16/scalatra+docker-(part-1).html) we kickstarted a basic Scalatra web services app.  Now we will add JSON support so it can act like a standard web API.
 
 Our first move will be adding the necessary dependencies to our app.  Scala doesn't have JSON support as a native feature so we will need to add [`json4s-jackson`](https://github.com/json4s/json4s) to handle JSON serialization, and [`scalatra-json`](https://mvnrepository.com/artifact/org.scalatra/scalatra-json/2.2.0) which is the Scalatra plugin for handling JSON requests and responses.
 

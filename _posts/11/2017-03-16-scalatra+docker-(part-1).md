@@ -10,11 +10,18 @@ tags:
   - docker
 ---
 
+[Here's a github repo which will track this project](https://github.com/lombardo-chcg/scalatra-docker)
+
+--
+
 I really enjoyed writing my posts about containerizing an Nginx web service.  So I thought it would be fun to do something a little more advanced and "Dockerize" a Scalatra web server.  In this first post we will just get the basic Hello World app built with Scalatra.
 
 --
 
 # Part 1: Basic Web Server
+
+> "In accordance with the ancient traditions of our people, we must first build an app that does nothing except say Hello world."
+> [*-Facebook's React Native tutorial*](https://facebook.github.io/react-native/docs/tutorial.html)
 
 Using Scalatra, we can get a web server up and running quickly, similar to other minimal frameworks like Ruby's Sinatra or JavaScript's Express.
 

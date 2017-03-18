@@ -2,7 +2,7 @@
 layout: post
 title:  "hello world, nginx+docker edition (part 1)"
 date:   2017-03-11 11:06:50
-categories: ops
+categories: web-dev
 excerpt: "basic hello world action using nginx and docker"
 tags:
   - nginx
