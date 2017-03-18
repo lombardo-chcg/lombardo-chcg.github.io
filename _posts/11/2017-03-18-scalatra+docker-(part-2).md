@@ -72,8 +72,6 @@ get("/") {
 }
 {% endhighlight %}
 
-*note: if you want to see the entire file in its finished state [check out this commit](https://github.com/lombardo-chcg/scalatra-docker/blob/1df7a664de6d25513a1c2c56569be19ebbfa94f7/src/main/scala/com/lombardo/app/DemoApiServlet.scala)*
-
 In the terminal, let's restart our server so we can test it out.
 
 {% highlight bash %}
@@ -82,3 +80,56 @@ sbt
 {% endhighlight %}
 
 Once we see `Server:main: Started` let's check out our new API.  Using Postman or curl hit `http://localhost:8080`.  JSON FTW!
+
+*note: if you want to see the entire file in its finished state [check out this commit](https://github.com/lombardo-chcg/scalatra-docker/blob/ecb53fc93adc99acfb060eca23736c51cd061762/src/main/scala/com/lombardo/app/DemoApiServlet.scala)*
+
+--
+
+As you can see we are now able to use standard Scala types in our code, but still return standard JSON from our endpoints.  
+
+Let's simulate a data model and RESTful endpoint, as if we were pulling our greetings from a database.
+
+Under the class definition let's make a case class, which is a Scala type for making succinct, immutable objects:
+
+{% highlight scala %}
+case class Greeting(language: String, content: String)
+{% endhighlight %}
+
+Now lets update our greetings endpoint:
+{% highlight scala %}
+get("/greetings") {
+  val greetings = List(
+    Greeting("English", "Hello World"),
+    Greeting("Spanish", "Hola Mundo"),
+    Greeting("French", "Bonjour le monde"),
+    Greeting("Italian", "Ciao mondo")
+  )
+
+  greetings
+}
+{% endhighlight %}
+
+Now from the terminal using `jq` for formatting:
+{% highlight bash %}
+curl -s http://localhost:8080/greetings | jq
+# [
+#   {
+#     "language": "English",
+#     "content": "Hello World"
+#   },
+#   {
+#     "language": "Spanish",
+#     "content": "Hola Mundo"
+#   },
+#   {
+#     "language": "French",
+#     "content": "Bonjour le monde"
+#   },
+#   {
+#     "language": "Italian",
+#     "content": "Ciao mondo"
+#   }
+# ]
+{% endhighlight %}
+
+*again if you want to see the entire file in its finished state [check out this commit](https://github.com/lombardo-chcg/scalatra-docker/blob/ecb53fc93adc99acfb060eca23736c51cd061762/src/main/scala/com/lombardo/app/DemoApiServlet.scala)*
