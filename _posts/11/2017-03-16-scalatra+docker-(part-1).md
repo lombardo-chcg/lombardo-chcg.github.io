@@ -3,7 +3,7 @@ layout: post
 title:  "scalatra+docker (part 1)"
 date:   2017-03-16 21:58:08
 categories: web-dev
-excerpt: "building an http web service with scala and dockerizing it"
+excerpt: "building an http web service with scala and dockerizing it.  in part 1: hello world"
 tags:
   - scalatra
   - scala
@@ -13,6 +13,8 @@ tags:
 I really enjoyed writing my posts about containerizing an Nginx web service.  So I thought it would be fun to do something a little more advanced and "Dockerize" a Scalatra web server.  In this first post we will just get the basic Hello World app built with Scalatra.
 
 --
+
+# Part 1: Basic Web Server
 
 Using Scalatra, we can get a web server up and running quickly, similar to other minimal frameworks like Ruby's Sinatra or JavaScript's Express.
 
@@ -52,4 +54,4 @@ sbt
 
 There will be a TON of output as sbt downloads dependencies and builds the project.  When you see `Server:main: Started`, hit `http://localhost:8080` in the browser and you'll see the standard Scalatra welcome screen.
 
-In the next post we will add JSON support to our server, getting it ready to field requests from our Nginx frontend container. 
+In the next post we will add JSON support to our server, getting it ready to field requests from our Nginx frontend container.
