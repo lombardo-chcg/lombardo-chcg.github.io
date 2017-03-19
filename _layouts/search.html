@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<div class="home">
+  <h1 class="page-heading">Search</h1>
+
+  <div id="ux-feedback"></div>
+
+  <h4 id="top-tier-results-header"></h4>
+  <div id="top-tier-results"></div>
+
+  <h4 id="lower-tier-results-header"></h4>
+  <div id="lower-tier-results"></div>
+</div>
+
+<script>
+  window.postsStore = [
+    {% for post in site.posts %}
+      {
+        title: "{{ post.title | xml_escape }}".toLowerCase(),
+        categories: "{{ post.categories | xml_escape }}".toLowerCase(),
+        tags: "{{ post.tags | xml_escape }}".toLowerCase(),
+        excerpt: {{ post.excerpt | strip_html | strip_newlines | jsonify }}.toLowerCase(),
+        content: {{ post.content | strip_html | strip_newlines | jsonify }}.toLowerCase(),
+        url: "{{ post.url | xml_escape }}"
+      },
+    {% endfor %}
+  ]
+</script>
+<script src="/js/search.js"></script>
