@@ -20,7 +20,7 @@
         <a class="page-link" href="{{full_base_url }}/about">about/</a>
         <a class="page-link" href="{{full_base_url }}/categories">categories/</a>
         <input type="text" id="search-box" placeholder="search term">
-        <button type="button" id="header-search-button" onclick="navigateToSearch()">search</button>
+        <button type="button" id="header-search-button" onclick="navigateToSearch()">go</button>
       </div>
     </nav>
 
@@ -32,12 +32,12 @@
 
 <script>
   function navigateToSearch() {
-    var searchRequest = document.getElementById('search-box').value.toLowerCase();
+    var searchRequest = document.getElementById('search-box').value;
 
     if (!searchRequest.length) {
       return;
     }
 
-    window.location.href = `/search?term=${searchRequest}`;
+    window.location.href = '/search?term=' + searchRequest;
   }
 </script>
