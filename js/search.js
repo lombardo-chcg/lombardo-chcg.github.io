@@ -1,8 +1,6 @@
 window.onload = function() {
   document.getElementById("search-box").focus();
   let params = new URLSearchParams(document.location.search.substring(1));
-
-  console.log(params.get('term'))
   search(params.get('term'));
 };
 
@@ -22,20 +20,16 @@ function clearSearchResults() {
 
 function search(term) {
   clearSearchResults();
-  var searchRequest;
+  var searchRequest, searchResults;
 
   if (!term) {
-    var searchRequest = document.getElementById('search-box').value.toLowerCase();
-  }
-
-  searchRequest = term;
-
-  if (searchRequest.length === 0) {
     setContentByID('ux-feedback', '<p>must enter a search term</p>');
     return;
   }
 
-  var searchResults = window.postsStore.reduce((results, post) => {
+  searchRequest = term.toLowerCase();
+
+  searchResults = window.postsStore.reduce((results, post) => {
     if (post.categories.includes(searchRequest) || post.tags.includes(searchRequest) || post.excerpt.includes(searchRequest)) {
       results.topTier.push(post);
       return results;
