@@ -15,13 +15,13 @@ tags:
 
 --
 
-For our next move in the **scalatra+docker** project, let's take the steps to go from an API we can run on localhost to a docker image that we can deploy.
+For our next move in the **scalatra+docker** project, let's take the steps to go from an API we can run on localhost to a configuration that we can deploy.
 
-Since Scala complies to Java bytecode and runs on the JVM, we need to create a "fat JAR" out of our application code.  A JAR is a "Java Archive" file, and a "fat JAR" is basically a bundle of all the code we need to run our application, including all the dependencies, bundled into a single file.
+Since Scala complies to Java bytecode and runs on the JVM, we need to create a "fat JAR" out of our application code.  A JAR is a "Java Archive" file, and a fat JAR is basically a bundle of all the code we need to run our application, including all the dependencies, bundled into a single file.
 
 I will admit that I am not an expert in Java build systems so I am going to hack my way thru this =)
 
-The package we will use to assemble our fat JAR is appropriately called [`sbt-assembly`](https://github.com/sbt/sbt-assembly).  Let's add its dependency to our project.
+The package we will use to assemble our fat JAR is appropriately called [`sbt-assembly`](https://github.com/sbt/sbt-assembly).  Let's add this dependency to our project.
 
 {% highlight bash %}
 touch project/assembly.sbt
@@ -111,4 +111,4 @@ Hit `http://localhost:8080/greetings` with curl or postman and BOOM there's our 
 
 Next time we'll be loading up this JAR into a runnable Docker image.
 
-[check out this commit to see the current state of the app](https://github.com/lombardo-chcg/scalatra-docker/commit/76d00538e158c931b205a375f06fe5c45e657b2d)   
+[check out this commit to see the code added during this post](https://github.com/lombardo-chcg/scalatra-docker/commit/76d00538e158c931b205a375f06fe5c45e657b2d)   
