@@ -37,5 +37,5 @@ println(addOne)
 
 val squared = map(nums, { num: Int => num * num })
 println(squared)
-List(1, 4, 9, 16, 25)
+// List(1, 4, 9, 16, 25)
 {% endhighlight %}
