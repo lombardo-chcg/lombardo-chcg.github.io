@@ -133,7 +133,7 @@ Let's tell Docker to run our image and to bind port 8080 of our local docker hos
 docker run -p 8080:8080 demo-scalatra-api
 {% endhighlight %}
 
-See some familiar output?  Now you can hit `http://0.0.0.0:8080/greetings` and see the output from the container.  
+See some familiar output in the terminal?  Now you can hit `http://0.0.0.0:8080/greetings` and see the response from the Scalatra app.  
 
 Success!  We have containerized our Scalatra app.  Next, we will push our image to Dockerhub to share, and also see how to setup a local network where our front-end Nginx container can be linked to our Scalatra API for data.
 
@@ -147,4 +147,4 @@ docker ps
 docker stop 18533a7bfcbb
 {% endhighlight %}
 
-[*finished state of the code after this post*]()
+[*finished state of the code after this post*](https://github.com/lombardo-chcg/scalatra-docker/commit/efd09e7e12365b431eb50490d500067f9e4764a7)
