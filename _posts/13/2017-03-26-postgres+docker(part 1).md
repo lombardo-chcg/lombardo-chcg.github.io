@@ -51,7 +51,7 @@ url=https://raw.githubusercontent.com/ravisorg/Area-Code-Geolocation-Database/ma
 curl $url >> data/us-area-code-cities.csv
 {% endhighlight %}
 
-Now lets mount that data directory in our Postgres container so we can access it from inside the container.  Just add `volumes` to the bottom of our `docker-compose.yml`
+Now lets mount that data directory in our Postgres container so we can access it from inside the container.  Just add `volumes` to the bottom of our `docker-compose.yml` and specify that we will mount our local `./data` directory in the container at the path `/data`:
 
 {% highlight yml %}
 version: '2.0'
