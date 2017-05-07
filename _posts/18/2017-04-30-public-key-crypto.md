@@ -64,8 +64,8 @@ a = 6                         b = 8
 
 
 Now the trick:
-* Alice multiplies her private key `a` by the number the Bank sent her, `bx` (`6 * 32` = 192)
-* the Bank multiplies their private key `b` by the number Alice sent them, `ax` (`8 * 24` = 192)
+* Alice multiplies her private key `a` by the number the Bank sent her, `bx` (`6 * 32 = 192`)
+* the Bank multiplies their private key `b` by the number Alice sent them, `ax` (`8 * 24 = 192`)
 
 Both parties arrive at `abx = 192` which is their private key.  This key can be used to decrypt communication between Alice and the Bank.
 
@@ -83,7 +83,7 @@ a = 6                         b = 8
 
 {% endhighlight %}
 
-As you have probably thought, it would be very easy for the eavesdropper to do some simple division using the the public numbers, and "crack" the private keys.
+As you have probably guessed, it would be very easy for the eavesdropper to do some simple division using the the public numbers, and "crack" the private keys.
 
 `ax / x = a` and `bx / x = b`
 
