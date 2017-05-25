@@ -78,4 +78,6 @@ scala> generateRedisProtocol(List("SET", "illinois", "springfield"))
 # "
 {% endhighlight %}
 
+What's nice about using a Scala `List` as the input param is this function can be used to generate other Redis commands that have an indeterminate input length , such as a list (`LPUSH mylist "hello" "world" "this" "is" "my" "list"`)
+
 The multiline result from Scala is doing a literal interpretation on the escaped ASCII characters for newline and carriage return.  Post coming soon about using this output to perform a mass data insertion into Redis.
