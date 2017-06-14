@@ -24,7 +24,7 @@ Z = (Z*Z) + C
 The rules:
 * `Z` starts at 0.  Every iteration generates a new value for `Z`, which we plug back in and run it again.  
 * If `Z` exceeds a given *absolute value* at any point during the iteration, then `C` is not part of the Set.
-* If we reach the end of the iteration and `Z` has never exceeded 2, then we have a number in the set.
+* If we reach the end of the iteration and `Z` has never exceeded the given *absolute value*, then we have a number in the set.
 
 So numbers that are in the Set get caught in an infinite loop where they never "break out" of the box created by the basic rules.
 
@@ -70,8 +70,7 @@ So we will need to give some added features to our `ComplexNumber` object constr
 addition:
 {% highlight JavaScript %}
 // param 'that' : instance of ComplexNumber
-
-ComplexNumber.prototype.add = function(that) {
+ComplexNumber.prototype.plus = function(that) {
     return new ComplexNumber(
         this.a + that.a,
         this.b + that.b
@@ -82,7 +81,6 @@ ComplexNumber.prototype.add = function(that) {
 multiplication [(based on this formula)](https://en.wikipedia.org/wiki/Complex_number#Multiplication_and_division)
 {% highlight javascript %}
 // param 'that' : instance of ComplexNumber
-
 ComplexNumber.prototype.times = function(that) {
     return new ComplexNumber(
         (this.a * that.a) - (this.b * that.b),
