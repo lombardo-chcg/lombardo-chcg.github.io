@@ -26,7 +26,7 @@ Here's a "better" `docker ps` for a bash profile:
 function dockerps() {
   {% raw %}[[ $(tput cols) -lt 100 ]] && { docker ps --format "table {{.Names}}\t{{.Ports}}"; return;}{% endraw %}
 
-  {% raw %}[[ $(tput cols) -lt 100 ]] && { docker ps --format "table {{.ID}}\t{{.Names}}\t{{.RunningFor}}\t{{.Ports}}"; return; }{% endraw %}
+  {% raw %}[[ $(tput cols) -lt 150 ]] && { docker ps --format "table {{.ID}}\t{{.Names}}\t{{.RunningFor}}\t{{.Ports}}"; return; }{% endraw %}
 
   {% raw %}docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.RunningFor}}\t{{.Ports}}"{% endraw %}
 }
