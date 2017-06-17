@@ -6,6 +6,7 @@ categories: languages
 excerpt: "determining if a given complex number is part of the set"
 tags:
   - imaginary-numbers
+  - algorithms
 ---
 
 [Last time](/languages/2017/06/11/the-Mandelbrot-set.html) we created a complex number prototype in JavaScript to use in our creation of a Mandelbrot Set visualization.  Today we implement the check to see if one of these complex numbers belongs in our set.

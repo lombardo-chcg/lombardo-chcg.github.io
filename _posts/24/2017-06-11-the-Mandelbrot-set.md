@@ -6,6 +6,7 @@ categories: languages
 excerpt: "working with complex numbers in javascript to create fractal geometry"
 tags:
   - imaginary-numbers
+  - algorithms
 ---
 
 The [Mandelbrot Set](https://en.wikipedia.org/wiki/Mandelbrot_set) is a thing of beauty.  At its core, it is very simple: it is a 2D graph that shows a point for every coordinate location that matches a rule.  It is a common way to show the beauty of fractal geometry.
