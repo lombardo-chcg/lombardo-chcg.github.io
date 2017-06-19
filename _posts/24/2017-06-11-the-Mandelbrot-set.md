@@ -2,7 +2,7 @@
 layout: post
 title:  "the mandelbrot set, part 1"
 date:   2017-06-11 19:13:24
-categories: languages
+categories: fractal-nature
 excerpt: "working with complex numbers in javascript to create fractal geometry"
 tags:
   - imaginary-numbers

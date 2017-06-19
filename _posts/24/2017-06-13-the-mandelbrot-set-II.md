@@ -2,7 +2,7 @@
 layout: post
 title:  "the mandelbrot set II"
 date:   2017-06-13 20:49:02
-categories: languages
+categories: fractal-nature
 excerpt: "determining if a given complex number is part of the set"
 tags:
   - imaginary-numbers

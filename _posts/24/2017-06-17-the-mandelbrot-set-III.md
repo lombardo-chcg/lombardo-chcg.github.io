@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "the-mandelbrot-set-III"
+title:  "the mandelbrot set III"
 date:   2017-06-17 09:07:43
-categories: languages
+categories: fractal-nature
 excerpt: "using the previous work with complex numbers to display the set in a browser"
 tags:
   - imaginary-numbers
@@ -25,4 +25,4 @@ The final results are here in a repo:
 [https://github.com/lombardo-chcg/OOJS-Mandelbrot-Set](https://github.com/lombardo-chcg/OOJS-Mandelbrot-Set)
 
 and here's a screen shot:
-![screenshot](https://raw.githubusercontent.com/lombardo-chcg/OOJS-Mandelbrot-Set/master/screenShot.pngato)
+![screenshot](https://raw.githubusercontent.com/lombardo-chcg/OOJS-Mandelbrot-Set/master/screenShot.png)
