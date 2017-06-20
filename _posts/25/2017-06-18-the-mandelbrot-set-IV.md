@@ -16,7 +16,7 @@ So I've been recently obsessed with The Mandelbrot Set and its self-reflective b
 * [Pi and the Mandelbrot Set](https://www.youtube.com/watch?v=d0vY0CKYhPY)
 
 ### Books
-* [*The Black Swan* is the modern classic which turned me on to the concept of fractals in the real world](https://en.wikipedia.org/wiki/The_Black_Swan_(Taleb_book))
+* [*The Black Swan*](https://en.wikipedia.org/wiki/The_Black_Swan_(Taleb_book)) is the modern classic which turned me on to the concept of fractals in the real world
 
 ### Wall Art
 * [A kickstarter for a vintage style map of the Mandelbrot set](https://www.kickstarter.com/projects/billtavis/mandelmap-poster-a-vintage-style-map-of-the-mandel)
