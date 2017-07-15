@@ -19,8 +19,10 @@
       <div class="trigger">
         <a class="page-link" href="{{full_base_url }}/about">about/</a>
         <a class="page-link" href="{{full_base_url }}/categories">categories/</a>
-        <input type="text" id="search-box" placeholder="search term">
-        <button type="button" id="header-search-button" onclick="navigateToSearch()">go</button>
+        <form id="searchForm" onsubmit="event.preventDefault(); navigateToSearch()" style="display:inline;">
+            <input type="text" id="search-box" placeholder="search term">
+            <button type="submit" id="header-search-button">go</button>
+        </form>
       </div>
     </nav>
 
