@@ -57,6 +57,7 @@
       return;
     }
 
+    document.getElementById('search-box').value = term;
     setContentByID('ux-feedback', '<h4>"<i>' + searchRequest + '</i>"</h4>');
     displayResults('top-tier-results', searchResults.topTier);
     displayResults('lower-tier-results', searchResults.lowerTier);
