@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "scalatra+docker (part 3)"
+title:  "scalatra + docker (part 3)"
 date:   2017-03-19 18:18:32
 categories: web-dev
 excerpt: "building a fat jar from our scalatra app"

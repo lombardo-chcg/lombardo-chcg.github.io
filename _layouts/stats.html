@@ -1,0 +1,90 @@
+---
+layout: default
+---
+<div class="home">
+  <h1 class="page-heading">Stats</h1>
+
+  <h4 style="margin-top:1.5em;">
+    Total Posts: <span id="postCount"></span>
+  </h4>
+
+  <h4 style="margin-top:1.5em;">
+    Average Post Length: <span id="averagePostLength"></span> words
+  </h4>
+
+  <h4 style="margin-top:1.5em;">
+    Most Common subjects: <span id="mostCommonSubjects"></span>
+  </h4>
+</div>
+
+<script>
+  window.postsStore = [
+    {% for post in site.posts %}
+      {
+        title: "{{ post.title | xml_escape }}".toLowerCase(),
+        categories: "{{ post.categories | xml_escape }}".toLowerCase(),
+        tags: "{{ post.tags | xml_escape }}".toLowerCase(),
+        excerpt: {{ post.excerpt | strip_html | strip_newlines | jsonify }}.toLowerCase(),
+        content: {{ post.content | strip_html | strip_newlines | jsonify }}.toLowerCase(),
+        url: "{{ post.url | xml_escape }}"
+      },
+    {% endfor %}
+  ]
+</script>
+<script>
+  var postCount = window.postsStore.length;
+  var averagePostLength = Math.round(
+    window.postsStore
+      .map(function(post) { return post.content.split(" ").length })
+      .reduce(function(acc, cur) { return acc + cur })
+    / window.postsStore.length
+  );
+  var mostCommonWords = window.postsStore.map(function(post) {
+    var tags = post.tags
+      .replace(/[\[\]\"]/g, "")
+      .split(/&quot;/)
+
+    return post.title.split(" ").concat(tags).filter(function(word){
+            return (
+              word.length > 0
+              && word !== ", "
+              && word !== "the"
+              && word !== "in"
+              && word !== "(part"
+              && word !== "+"
+            );
+          })
+  })
+  .reduce(function(wordMap, currentGrouping) {
+    currentGrouping.forEach(function(word) {
+      if (wordMap[word]) {
+        wordMap[word] += 1
+      } else {
+        wordMap[word] = 1
+      }
+    })
+
+    return wordMap;
+  }, {})
+
+  var sorted = Object.keys(mostCommonWords).map(function(key) {
+    return [key, mostCommonWords[key]]
+  })
+  .sort(function(a, b) {
+    return b[1] - a[1];
+  })
+
+  var top10 = sorted.slice(0, 9).map(function(result) {return result[0]})
+
+  function setContentByID(id, content) {
+    document.getElementById(id).innerHTML = content;
+  }
+
+  setContentByID("postCount", postCount)
+  setContentByID("averagePostLength", averagePostLength)
+
+  top10.forEach(function(subject) {
+    var node = '\n<div>\n<a href="/search?term=' + subject + '">' + subject + '</a>\n</div>\n';
+    document.getElementById("mostCommonSubjects").innerHTML += node;
+  })
+</script>

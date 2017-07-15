@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "scalatra+docker (part 2)"
+title:  "scalatra + docker (part 2)"
 date:   2017-03-18 16:34:39
 categories: web-dev
 excerpt: "adding JSON support to our Scalatra server"

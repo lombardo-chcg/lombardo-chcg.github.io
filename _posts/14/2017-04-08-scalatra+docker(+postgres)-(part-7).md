@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "scalatra+docker(+postgres) (part 7)"
+title:  "scalatra + docker(+postgres) (part 7)"
 date:   2017-04-08 22:05:28
 categories: web-dev
 excerpt: "connecting our scala web app to a postgres db"

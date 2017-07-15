@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "hello world, nginx+docker edition (part 4)"
+title:  "hello world, nginx + docker edition (part 4)"
 date:   2017-03-30 21:00:03
 categories: web-dev
 excerpt: "local front end development with nginx and docker"

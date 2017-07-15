@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "scalatra+docker (part 4)"
+title:  "scalatra + docker (part 4)"
 date:   2017-03-25 13:04:14
 categories: web-dev
 excerpt: "creating a docker image from our scalatra jar"

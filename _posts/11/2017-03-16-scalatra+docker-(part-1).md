@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "scalatra+docker (part 1)"
+title:  "scalatra + docker (part 1)"
 date:   2017-03-16 21:58:08
 categories: web-dev
 excerpt: "building an http web service with scala and dockerizing it.  in part 1: hello world"
