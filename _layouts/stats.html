@@ -2,23 +2,26 @@
 layout: default
 ---
 <div class="home">
-  <h1 class="page-heading">Stats</h1>
+  <h1 class="page-heading">stats</h1>
 
   <h4 style="margin-top:1.5em;">
-    Total Posts: <span id="postCount"></span>
+    total posts
+    <ul><li id="postCount"></li></ul>
   </h4>
 
   <h4 style="margin-top:1.5em;">
-    Average Post Length: <span id="averagePostLength"></span> words
+    average post length
+    <ul><li id="averagePostLength"> words</li></ul>
   </h4>
 
   <h4 style="margin-top:1.5em;">
-    Most Common subjects: <span id="mostCommonSubjects"></span>
+    most common subjects
+    <ul id="mostCommonSubjects"></ul>
   </h4>
 </div>
 
 <script>
-  window.postsStore = [
+  window.StatsStore = [
     {% for post in site.posts %}
       {
         title: "{{ post.title | xml_escape }}".toLowerCase(),
@@ -26,43 +29,32 @@ layout: default
         tags: "{{ post.tags | xml_escape }}".toLowerCase(),
         excerpt: {{ post.excerpt | strip_html | strip_newlines | jsonify }}.toLowerCase(),
         content: {{ post.content | strip_html | strip_newlines | jsonify }}.toLowerCase(),
-        url: "{{ post.url | xml_escape }}"
       },
     {% endfor %}
   ]
 </script>
 <script>
-  var postCount = window.postsStore.length;
+  var postCount = window.StatsStore.length;
   var averagePostLength = Math.round(
-    window.postsStore
+    window.StatsStore
       .map(function(post) { return post.content.split(" ").length })
       .reduce(function(acc, cur) { return acc + cur })
-    / window.postsStore.length
+    / window.StatsStore.length
   );
-  var mostCommonWords = window.postsStore.map(function(post) {
-    var tags = post.tags
-      .replace(/[\[\]\"]/g, "")
-      .split(/&quot;/)
+  var mostCommonWords = window.StatsStore.map(function(post) {
+    var title = post.title.split(" ")
+    var tags = post.tags.replace(/[\[\]\"]/g, "").split(/&quot;/)
 
-    return post.title.split(" ").concat(tags).filter(function(word){
-            return (
-              word.length > 0
-              && word !== ", "
-              && word !== "the"
-              && word !== "in"
-              && word !== "(part"
-              && word !== "+"
-            );
-          })
+    return title.concat(tags).filter(isValidWord)
   })
   .reduce(function(wordMap, currentGrouping) {
     currentGrouping.forEach(function(word) {
       if (wordMap[word]) {
-        wordMap[word] += 1
+        wordMap[word] += 1;
       } else {
-        wordMap[word] = 1
+        wordMap[word] = 1;
       }
-    })
+    });
 
     return wordMap;
   }, {})
@@ -72,19 +64,30 @@ layout: default
   })
   .sort(function(a, b) {
     return b[1] - a[1];
-  })
+  });
 
-  var top10 = sorted.slice(0, 9).map(function(result) {return result[0]})
+  var top10 = sorted.slice(0, 9).map(function(result) {return result[0]});
 
   function setContentByID(id, content) {
     document.getElementById(id).innerHTML = content;
+  }
+
+  function isValidWord(word) {
+    return (
+      word.length > 0
+      && word !== ", "
+      && word !== "the"
+      && word !== "in"
+      && word !== "(part"
+      && word !== "+"
+    );
   }
 
   setContentByID("postCount", postCount)
   setContentByID("averagePostLength", averagePostLength)
 
   top10.forEach(function(subject) {
-    var node = '\n<div>\n<a href="/search?term=' + subject + '">' + subject + '</a>\n</div>\n';
+    var node = '\n<li>\n<a href="/search?term=' + subject + '">' + subject + '</a>\n</li>\n';
     document.getElementById("mostCommonSubjects").innerHTML += node;
   })
 </script>
