@@ -10,7 +10,7 @@ tags:
 
 So I've been working on this blog project for 6.5 months now, and I thought it would be fun to review some stats!
 
-I'm going to do another post about how to generate these stats using the blog platform that I'm using to generate these posts ([Jekyll](https://jekyllrb.com/))
+I'm going to do another post about how to generate these stats using the blog platform that I'm using ([Jekyll](https://jekyllrb.com/))
 
 #### total posts
 * 118 (not including this one)
