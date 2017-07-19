@@ -10,9 +10,9 @@ tags:
 
 *The Task*
 
-You have an old Windows 7 machine.  It is painfully slow to even open a web browser.  You want to install Ubuntu flavored Linux on it.
+I have an old Windows 7 machine.  It is painfully slow to even open a web browser.
 
-No problem.  We'll even use the Windows machine to prepare it's own end.  Poetic, that.
+Let's install Ubuntu on it!  We'll even use the Windows machine to prepare it's own end.  Poetic, that.
 
 *The Steps*
 
