@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<div class="home">
+  <p>The idea of this blog is to keep track of all the cool software development stuff I learn in 2017. My goal is to post 5 times per week. Each post will be a short snippet that represents something I learned that day.</p>
+
+  <hr>
+
+  <h4 style="margin-top:1.5em;">
+    total posts
+    <ul><li id="postCount"></li></ul>
+  </h4>
+
+  <h4 style="margin-top:1.5em;">
+    average post length
+    <ul><li><span id="averagePostLength"></span> words</li></ul>
+  </h4>
+
+  <h4 style="margin-top:1.5em;">
+    top 10 post subjects
+    <ul id="mostCommonSubjects"></ul>
+  </h4>
+</div>
+
+<script>
+  window.StatsStore = [
+    {% for post in site.posts %}
+      {
+        title: "{{ post.title | xml_escape }}".toLowerCase(),
+        categories: "{{ post.categories | xml_escape }}".toLowerCase(),
+        tags: "{{ post.tags | xml_escape }}".toLowerCase(),
+        excerpt: {{ post.excerpt | strip_html | strip_newlines | jsonify }}.toLowerCase(),
+        content: {{ post.content | strip_html | strip_newlines | jsonify }}.toLowerCase(),
+      },
+    {% endfor %}
+  ]
+</script>
+<script src="/js/stats.js"></script>
