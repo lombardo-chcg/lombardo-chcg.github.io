@@ -13,7 +13,7 @@ Sometimes during a development process its possible produce a Docker image that 
 
 Of course it's always possible to get the logs, even for a failed container, by just grabbing the container ID.
 
-For an example we can use a container from our [Docker-Nginx tutorial from a few weeks ago](/web-dev/2017/03/11/hello-world,-nginx+docker-edition-(part-2).html) that is not actually running.
+For an example we can use a container from our [Docker-Nginx tutorial from a few weeks ago](/web-dev/2017/03/11/hello-world,-nginx + docker-edition-(part-2).html) that is not actually running.
 
 {% highlight bash %}
 docker ps -a

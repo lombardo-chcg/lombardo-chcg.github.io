@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "hello world, nginx+docker edition (part 3)"
+title:  "hello world, nginx + docker edition (part 3)"
 date:   2017-03-15 22:01:08
 categories: web-dev
-excerpt: "continuing the nginx+docker series with basic authentication"
+excerpt: "continuing the nginx + docker series with basic authentication"
 tags:
   - nginx
   - docker

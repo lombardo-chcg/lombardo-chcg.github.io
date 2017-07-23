@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "scalatra+docker (part 6)"
+title:  "scalatra + docker (part 6)"
 date:   2017-04-08 09:57:45
 categories: web-dev
 excerpt: "preparing a postgres database for our api"

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "scalatra+docker (part 5)"
+title:  "scalatra + docker (part 5)"
 date:   2017-03-25 15:24:32
 categories: web-dev
 excerpt: "publishing our image to docker hub"

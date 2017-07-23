@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "hello world, nginx+docker edition (part 2)"
+title:  "hello world, nginx + docker edition (part 2)"
 date:   2017-03-11 11:29:07
 categories: web-dev
 excerpt: "finishing hello world with nginx and docker"
@@ -9,7 +9,7 @@ tags:
   - docker
 ---
 
-[In Part 1]({{ full_base_url }}/web-dev/2017/03/11/hello-world,-nginx+docker-edition-(part-1).html) we set up our basic structure and Nginx configuration.  Now let's get our hands dirty with the Docker config.
+[In Part 1]({{ full_base_url }}/web-dev/2017/03/11/hello-world,-nginx + docker-edition-(part-1).html) we set up our basic structure and Nginx configuration.  Now let's get our hands dirty with the Docker config.
 
 First we need to set up our Dockerfile.  Docker operates like a layer cake of code, starting with a foundational layer OS (Linux) and then adds our custom code on top.  The final output is a Docker image, which is basically a blueprint for creating Docker containers.  
 
