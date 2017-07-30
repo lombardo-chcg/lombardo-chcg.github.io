@@ -79,7 +79,7 @@ scala target/scala-2.12/sbt-starter_2.12-0.0.1.jar
 # Hello from sbt starter pack!
 {% endhighlight %}
 
-Sweet.  Now let's Dockerize it to complete the starter back.
+Sweet.  Now let's Dockerize it to complete the starter pack.
 
 {% highlight bash %}
 touch Dockerfile
@@ -103,10 +103,10 @@ docker run sbt-starter:latest
 what the....
 
 {% highlight bash %}
-Exception in thread "main" java.lang.NoClassDefFoundError: scala/Predef$
-	at com.lombardo.app.Main$.main(Main.scala:5)
-	at com.lombardo.app.Main.main(Main.scala)
-Caused by: java.lang.ClassNotFoundException: scala.Predef$
+# Exception in thread "main" java.lang.NoClassDefFoundError: scala/Predef$
+# 	at com.lombardo.app.Main$.main(Main.scala:5)
+# 	at com.lombardo.app.Main.main(Main.scala)
+# Caused by: java.lang.ClassNotFoundException: scala.Predef$
 {% endhighlight %}
 
 What, wtf is that?  I thought we added our main method to the class?
