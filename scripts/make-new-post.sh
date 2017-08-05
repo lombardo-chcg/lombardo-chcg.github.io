@@ -35,7 +35,7 @@ fileLocation=_posts/${currentWeekNumber}
 
 [[ -e $fileLocation/$fileName ]] &&  { echo "Error: File already exists $fileLocation/$fileName" >&2; exit 1; }
 
-echo "Creating '$fileName' and inserting Jekyll header..."
+echo "Creating '$fileLocation/$fileName' and inserting Jekyll header..."
   header=$(makePostHeader "$postTopic")
 
   echo "$header" >> $fileLocation/${fileName}
