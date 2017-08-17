@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "react + docker"
+title:  "react + docker, part 1"
 date:   2017-08-13 19:38:03
 categories: "tools"
 excerpt: "dockerizing an app made with facebook's create-react-app tool"
@@ -9,6 +9,8 @@ tags:
   - javascript
   - jsx
   - docker
+  - express
+  - node
 ---
 
 The [create-react-app](https://github.com/facebookincubator/create-react-app) from Facebook is a fantastic way to kick start a UI project built with React.  I had a use case to deploy a basic React app using AWS EC2 Container Service, so I decided to Dockerize a create-react-app.  Here's how it went down.
