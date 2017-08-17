@@ -13,6 +13,12 @@ tags:
 - node
 ---
 
+[*public repo for this post: https://github.com/lombardo-chcg/dockerized-create-react-app*](https://github.com/lombardo-chcg/dockerized-create-react-app)
+
+
+--
+
+
 In [part 1](/tools/2017/08/13/react-+-docker.html) we created a basic javascript server that will serve up our React web app.  Now we need to "containizer" the app using Docker.
 
 As a reminder of our basic workflow:
@@ -70,4 +76,4 @@ docker run -p "80:9000" example-react-app:latest
 
 `localhost` in any browser will show the React app.
 
-And to prove the proxy is working, try `curl localhost/proxy` from a terminal and you should see Google's page content.  Now just point that proxy target at your backend server and don't sweat the CORS. 
+And to prove the proxy is working, try `curl localhost/proxy` from a terminal and you should see Google's page content.  Now just point that proxy target at your backend server and don't sweat the CORS in the browser.

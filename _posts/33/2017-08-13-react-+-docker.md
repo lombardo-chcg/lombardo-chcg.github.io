@@ -13,6 +13,12 @@ tags:
   - node
 ---
 
+[*public repo for this post: https://github.com/lombardo-chcg/dockerized-create-react-app*](https://github.com/lombardo-chcg/dockerized-create-react-app)
+
+
+--
+
+
 The [create-react-app](https://github.com/facebookincubator/create-react-app) from Facebook is a fantastic way to kick start a UI project built with React.  I had a use case to deploy a basic React app using AWS EC2 Container Service, so I decided to Dockerize a create-react-app.  Here's how it went down.
 
 Basic workflow
