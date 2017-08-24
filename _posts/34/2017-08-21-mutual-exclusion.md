@@ -36,22 +36,22 @@ class LockService {
   val lockedPath = "/myResource"
   val dummyData = "starting data"
 
-  client.start()
+  client.start
 
   Try (client.create.creatingParentContainersIfNeeded.forPath(lockedPath, dummyData.getBytes)) match {
     case Success(_) => println(s"zNode $lockedPath created")
-    case Failure(e) => println(e.getMessage)
+    case Failure(e) => println(e.getMessage)  // node already exists
   }
 
   val lock = new InterProcessMutex(client, lockedPath)
 
-  lock.acquire()
+  lock.acquire
 
-  client.setData.forPath(lockedPath, "new data".getBytes)
+  client.setData.forPath(lockedPath, "bad data".getBytes)
 
-  lock.release()
+  lock.release
 
-  client.close()
+  client.close
 }
 {% endhighlight %}
 
