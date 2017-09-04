@@ -82,7 +82,7 @@ and it could accept JSON in either format, not caring either way:
 }
 {% endhighlight %}
 
-I added my mini-producer service to [this `docker-compose.yml` file: https://github.com/lombardo-chcg/kafka-local-stack/blob/master/docker-compose.yml](https://github.com/lombardo-chcg/kafka-local-stack/blob/master/docker-compose.yml)
+I added my mini-producer service to [this `docker-compose.yml` file: https://github.com/lombardo-chcg/kafka-local-stack/blob/ch1/docker-compose.yml#L71](https://github.com/lombardo-chcg/kafka-local-stack/blob/ch1/docker-compose.yml#L71)
 
 Let's start up the stack and confirm it works.  `docker-compose up -d`
 

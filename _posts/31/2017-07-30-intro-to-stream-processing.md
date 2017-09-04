@@ -20,14 +20,14 @@ So I ended up building on my [sbt starter pack](/tools/2017/07/29/sbt-basics.htm
 Here's the code: [https://github.com/lombardo-chcg/kafka-scala-consumer](https://github.com/lombardo-chcg/kafka-scala-consumer)
 
 
-I added the app to my growing [Kafka/Docker stack](https://github.com/lombardo-chcg/kafka-local-stack), and here's a mini-workflow to show how the pieces connect:
+I added the app to my growing [Kafka/Docker stack](https://github.com/lombardo-chcg/kafka-local-stack/tree/ch2), and here's a mini-workflow to show how the pieces connect:
 
 1.  Kick off a shell script that publishes a stream of mock "readings" using random numbers
 2.  The script sends http requests to my [rest producer](/exploration/2017/07/26/keys-&-case-classes.html) app as JSON.  The app publishes the JSON to a Kafka topic
 3. The new service consumes from that topic, taking each record and doing a basic "map" operation over it.  (honestly it just takes the "reading", doubles it, and prints out the result to standard out.  but *technically* that is real time stream processing!!)
 
 Try it out! Download the docker compose file here:
-[https://github.com/lombardo-chcg/kafka-local-stack](https://github.com/lombardo-chcg/kafka-local-stack)
+[https://github.com/lombardo-chcg/kafka-local-stack/tree/ch2](https://github.com/lombardo-chcg/kafka-local-stack/tree/ch2)
 
 Open 2 terminal sessions.
 

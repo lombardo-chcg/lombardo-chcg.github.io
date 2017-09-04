@@ -1,8 +1,14 @@
 #!/bin/bash
 
-bundle exec jekyll serve > /dev/null &
+if [[ $1 == '--dev' ]];
+  then bundle exec jekyll serve --limit_posts 1 > /dev/null &
+  else bundle exec jekyll serve > /dev/null &
+fi
+
+# bundle exec jekyll serve > /dev/null &
 
 echo "Starting Jekyll server on port 4000"
+[[ $1 == '--dev' ]] && { echo "(dev mode enabled - single post only)"; }
 
 waitExpression=1
 count=0
