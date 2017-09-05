@@ -5,8 +5,6 @@ if [[ $1 == '--dev' ]];
   else bundle exec jekyll serve > /dev/null &
 fi
 
-# bundle exec jekyll serve > /dev/null &
-
 echo "Starting Jekyll server on port 4000"
 [[ $1 == '--dev' ]] && { echo "(dev mode enabled - single post only)"; }
 

@@ -38,6 +38,11 @@ volumes:
 
 2) Also note that we are using the basic `StringConverter` to interface Kafka Connect to Kafka.
 
+{% highlight bash %}
+CONNECT_KEY_CONVERTER: "org.apache.kafka.connect.storage.StringConverter"
+CONNECT_VALUE_CONVERTER: "org.apache.kafka.connect.storage.StringConverter"
+{% endhighlight %}
+
 --
 
 #### Step two: create Kafka Connect job.  
