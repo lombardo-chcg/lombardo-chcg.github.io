@@ -28,15 +28,15 @@ in `version.file`:
 
 our base command to increment the version:
 {% highlight bash %}
-awk '{print $1 + 1'} version.file
+awk '{print $1 + 1}' version.file
 # 2
 {% endhighlight %}
 
 now we just need to `echo` the output of that command back to the source file:
 {% highlight bash %}
-echo "$(awk '{print $1 + 1'} version.file)" > version.file
+echo "$(awk '{print $1 + 1}' version.file)" > version.file
 cat version.file
 # 2
 {% endhighlight %}
 
-Here's a fun challenge: write a `awk` script which increments major, minor or revision version number (aka `0.0.1`) based on a rule set. 
+Here's a fun challenge: write a `awk` script which increments major, minor or revision version number (aka `1.0.1`) based on a rule set.
