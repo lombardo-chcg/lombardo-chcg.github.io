@@ -12,9 +12,10 @@ tags:
 Variable assignment:
 {% highlight bash %}
 printf -v USER_EMAIL $(curl https://jsonplaceholder.typicode.com/comments/1 | jq -r ".email")
+echo $USER_EMAIL
 {% endhighlight %}
 
-`print-table.sh`:
+script to print a formatted table:
 {% highlight bash %}
 #!/bin/bash
 
