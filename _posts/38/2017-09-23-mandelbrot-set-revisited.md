@@ -2,10 +2,12 @@
 layout: post
 title:  "mandelbrot set revisited"
 date:   2017-09-23 17:08:21
-categories:
-excerpt:
+categories: fractal-nature
+excerpt: "experimenting with the equation which produces the set"
 tags:
-  -
+  - javascript
+  - imaginary-numbers
+  - algorithms
 ---
 
 I have a developed an unending fascination with [The Mandelbrot Set](https://lombardo-chcg.github.io/search?term=mandelbrot).  
