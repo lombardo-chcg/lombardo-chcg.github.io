@@ -74,4 +74,4 @@ What we are doing here is setting up an HTTP server with 2 "locations" or endpoi
 * `/` the root which serves up our `src` directory, which by default serves the `index.html` file.  Therefore we don't need to specify the `index.html` file here.
 * the events block is required by Nginx but I won't cover that here.  [Read more if you desire.](http://nginx.org/en/docs/ngx_core_module.html#events)
 
-[Continued in part two!]({{ full_base_url }}/ops/2017/03/11/hello-world,-nginx + docker-edition-(part-2).html)
+[Continued in part two!](/web-dev/2017/03/11/hello-world,-nginx+docker-edition-(part-2).html).html)

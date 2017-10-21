@@ -61,4 +61,4 @@ sbt
 
 There will be a TON of output as sbt downloads dependencies and builds the project.  When you see `Server:main: Started`, hit `http://localhost:8080` in the browser and you'll see the standard Scalatra welcome screen.
 
-In the next post we will add JSON support to our server, getting it ready to field requests from our Nginx frontend container.
+In the [next post](/web-dev/2017/03/18/scalatra+docker-(part-2).html) we will add JSON support to our server, getting it ready to field requests from our Nginx frontend container.

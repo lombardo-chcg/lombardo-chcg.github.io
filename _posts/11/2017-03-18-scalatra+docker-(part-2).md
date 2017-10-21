@@ -61,7 +61,7 @@ before() {
 To make this work we need to add `JacksonJsonSupport` to our class definition:
 
 {% highlight scala %}
-class MyScalatraServlet extends CmonIntellijStack with JacksonJsonSupport {
+class MyScalatraServlet extends DemoapiStack with JacksonJsonSupport {
 {% endhighlight %}
 
 Alright.  Now we are ready to send some JSON!  We're going to use the Scala Tuple type to create our JSON.
@@ -137,3 +137,5 @@ curl -s http://localhost:8080/greetings | jq
 {% endhighlight %}
 
 *again if you want to see the entire file in its finished state [check out this commit](https://github.com/lombardo-chcg/scalatra-docker/blob/ecb53fc93adc99acfb060eca23736c51cd061762/src/main/scala/com/lombardo/app/DemoApiServlet.scala)*
+
+In the [next chapter](/web-dev/2017/03/19/scalatra+docker-(part-3).html) we will build a fat jar from our Scalatra project. 
