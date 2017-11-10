@@ -42,7 +42,7 @@ import org.apache.kafka.common.serialization.Serdes
 import org.apache.kafka.streams.kstream.{KStream, ValueMapper}
 import org.apache.kafka.streams.{KafkaStreams, StreamsBuilder, StreamsConfig}
 
-class LineSplit {
+class TransformString {
   val props = new Properties
   props.put(StreamsConfig.APPLICATION_ID_CONFIG, "streams-pipe2")
   props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9091")
@@ -63,6 +63,6 @@ class LineSplit {
   val streams = new KafkaStreams(topology, props)
   streams.start
 }
-
-
 {% endhighlight %}
+
+Since the Kafka `Producer` and `Consumer` APIs are so clear and easy to use I would much rather build an application using those, compared to this streaming business.  perhaps that will change as I get more experience.  But for now, I'd prefer to keep it straightforward with the old school ways.
