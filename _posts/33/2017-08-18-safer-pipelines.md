@@ -16,7 +16,7 @@ tags:
 
 Wise words from a great book.  Let's see how to do it in a bash script.
 
-This script runs a `curl` command which will fail due to a bad url.  The goal will be to "catch" that failure and exit the script, drawing without processing further instructions, drawing immediate attention to the error and not running other commands pointlessly or dangerously. 
+This script runs a `curl` command which will fail due to a bad url.  The goal will be to "catch" that failure and exit the script, without processing further instructions, drawing immediate attention to the error and not running other commands pointlessly or dangerously. 
 
 `pipefail.sh` version 1:
 {% highlight bash %}
