@@ -15,7 +15,7 @@ Here are some takeaways from watching a talk by Martin Odersky, the founder of S
 As programmers, the biggest difficulty we face is complexity.
 * i.e. when it is easier/more attractive to throw away existing code and start again, rather than understand and support the existing code
 
-Big takeaway: If there are multiple ways to solve a problem, pick the simplest one that does the trick
+Big takeaway: If there are multiple ways to solve a problem, pick the simplest one that does the trick.
 
 More reading: [http://www.lihaoyi.com/post/StrategicScalaStylePrincipleofLeastPower.html#complexity-is-your-enemy](http://www.lihaoyi.com/post/StrategicScalaStylePrincipleofLeastPower.html#complexity-is-your-enemy)
 
