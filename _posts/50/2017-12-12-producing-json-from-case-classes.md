@@ -51,7 +51,7 @@ to this JSON:
 
 (for example's sake, please imagine the case classes in use have more than just a single field...)
 
-First..imports are important!
+First..imports are important!  Esp. the `JsonDSL` one for this example.
 
 {% highlight scala %}
 import org.json4s._
@@ -63,6 +63,12 @@ implicit val jsonFormats: Formats = DefaultFormats
 
 Using the [docs](https://github.com/json4s/json4s#producing-json), I would expect the following Scala code to produce the intended JSON using the json4s `~` operator:
 {% highlight scala %}
+case class BreakfastItem(name: String)
+case class LunchItem(name: String)
+
+val breakfastItemList = List(BreakfastItem("oj"), BreakfastItem("oatmeal"))
+val lunchItemList = List(LunchItem("pbj"), LunchItem("chips"))
+
 ("breakfast" -> breakfastItemList) ~ ("lunch" -> lunchItemList)
 {% endhighlight %}
 
