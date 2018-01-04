@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: standard in
 email: dpa.lombardo@gmail.com
-description: a software thing i learned today, 5 days a week
+description: a software knowledge input stream
 author: dominick lombardo
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
