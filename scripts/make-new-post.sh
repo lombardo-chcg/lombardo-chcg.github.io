@@ -22,6 +22,7 @@ done
 # TODO seperate this make file logic into a function
 postDate=$(date +%Y-%m-%d)
 currentWeekNumber=$(date +%V)
+currentYear=$(date +%Y)
 fileName=$postDate
 
 for word in $postTopic; do
@@ -29,7 +30,7 @@ for word in $postTopic; do
 done
 
 fileName=$fileName.md
-fileLocation=_posts/${currentWeekNumber}
+fileLocation=_posts/years/$currentYear/$currentWeekNumber
 
 [[ ! -d $fileLocation ]] && { mkdir $fileLocation; }
 
