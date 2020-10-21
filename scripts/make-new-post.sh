@@ -32,7 +32,7 @@ done
 fileName=$fileName.md
 fileLocation=_posts/years/$currentYear/$currentWeekNumber
 
-[[ ! -d $fileLocation ]] && { mkdir $fileLocation; }
+[[ ! -d $fileLocation ]] && { mkdir -p $fileLocation; }
 
 [[ -e $fileLocation/$fileName ]] &&  { echo "Error: File already exists $fileLocation/$fileName" >&2; exit 1; }
 
