@@ -8,19 +8,20 @@ tags:
   - scala
   - websocket
   - javascript
+  - streaming
 ---
 
-My first introduction to [WebSockets](https://en.wikipedia.org/wiki/WebSocket) was using the native JavaScript [`WebSocket` object](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) while programming for web.  IMO the native JS `WebSocket` is an extremely intuitive API for handling streaming data.
+My first introduction to [Websockets](https://en.wikipedia.org/wiki/WebSocket) was using the vanilla JavaScript [`WebSocket` object](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) while making a web page a few years back.  IMO the native JS `WebSocket` provides an extremely intuitive API for handling duplex communication with a server.
 
-In a Scala context, WebSocket client interactions are much less intuitive.  I have used several libraries and they all required me to learn new abstractions and use overly-powerful tooling to perform simple WebSocket client tasks.  Where was my basic, event-driven Scala `WebSocket` client API?
+In a Scala context, WebSocket client interactions can be much less intuitive.  I have used several libraries and they all required me to learn new abstractions and buy into much larger frameworks and patterns in order to perform simple WebSocket client tasks.  Where was my basic, event-driven Scala `WebSocket` client??
 
-I could not find one so I decided to create it myself.
+I could not find it so I decided to create it myself.
 
 Introducing [`websocket-scala`](https://github.com/lombardo-chcg/websocket-scala)!
 
 > websocket-scala is a simple Scala Websocket client library. It is based on the WebSocket interface as defined in the MDN web docs, which is available as a JavaScript object in HTML5-compliant web browsers. The goal of the library is to provide the same simple & intuitive Websocket client api for JVM Scala apps.
 
-This API is far from functional, and that's ok.  I fully embrace the JS API for what it is - a simple, effective way to manage a duplex communication channel with a WebSocket server. 
+This is far from a purely-functional Scala library.  Don't get me wrong - I adore the beauty and structure that is possible in Functional Programming.  But sometimes I just need to get something done quickly and efficiently.  Less FP, more GSD (getting shit done).  In this way, I am highly inspired by the [Li Haoyi](https://github.com/lihaoyi) style of Scala - simple, ultra-pragmatic, and extremely powerful.  Therefore I fully embrace the [JavaScript `WebSocket` API](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) for what it is - a simple, effective way to manage a websocket connection.
 
 Here's an example of how to connect to the [Coinbase public websocket feed](https://docs.pro.coinbase.com/?javascript#websocket-feed) and stream ticker data for 15 seconds using an [Ammonite](https://ammonite.io/) repl session:
 
