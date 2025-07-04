@@ -282,6 +282,12 @@ To make our bot interactive, let's send messages back to the channel.  This is n
 
 And now we've got a fully-functional, `Hello World` Discord bot.  What would you build with it?
 
+Some things to add:
+- proper enums and types rather than magic strings
+- reconnect/resume sessions
+- slash commands
+- your cool idea here
+
 Here's the fully working example for reference:
 ```scala
 package runnable
@@ -345,7 +351,7 @@ implicit val helloDataRW: ReadWriter[HelloData] = macroRW
 
 object DiscordBotV2 {
   private val BOT_TOKEN = sys.env.getOrElse("BOT_TOKEN", sys.error("env var BOT_TOKEN required"))
-  private val BOT_NAME = "ws-scala-01"
+  private val BOT_NAME  = "ws-scala-01"
 
   // Should be fetched as per the docs, hardcode for the example.
   private val gatewayUrl = "wss://gateway.discord.gg/?v=10&encoding=json"
@@ -419,7 +425,7 @@ object DiscordBotV2 {
                 "Content-Type"  -> "application/json",
               )
 
-              val message = s"Hello from the bot @ ${System.currentTimeMillis()}"
+              val message        = s"Hello from the bot @ ${System.currentTimeMillis()}"
               val messageWrapper = ujson.Obj("content" -> message)
               println(s"Sending message: $url $message")
               val response = requests.post(
@@ -429,7 +435,6 @@ object DiscordBotV2 {
               )
             }
           }
-
 
         // Other opcodes can be handled here
         case _ =>
