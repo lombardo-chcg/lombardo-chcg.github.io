@@ -57,7 +57,6 @@ val BOT_NAME = "REPLACE_ME"
 Once we complete the connection, we will start receiving events from Discord.  All events on the connection will be wrapped in a standard payload (both incoming and outgoing).  Here's a Scala case class to represent it along with the upickle JSON plumbing:
 
 ```scala
-// Generic payload structure to read the opcode (`op`) first.
 case class GatewayEventPayload(
     op: Int,          // Gateway opcode
     d: Value,         // Event data JSON, typed as ujson.Value
@@ -81,7 +80,7 @@ For now we will just leave a generic JSON value in the `d` field and a string in
 
 ## OpCodes
 
-Each gateway event will contain a OpCode (int) to identify itself.  Here's the ones we care about for this example:
+Each gateway event will contain an [OpCode](https://discord.com/developers/docs/topics/opcodes-and-status-codes#opcodes-and-status-codes) (int) to identify itself.  Here's the ones we care about for this example:
 ```scala
 object OpCode {
   val EVENT_DISPATCH = 0
