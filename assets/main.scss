@@ -1,0 +1,89 @@
+---
+---
+
+@import "minima";
+
+/* Dark Mode Variables */
+:root {
+  --bg-color-light: #fdfdfd;
+  --text-color-light: #111;
+  --link-color-light: #2a7ae2;
+  --visited-color-light: #1756a9;
+
+  --bg-color-dark: #121212;
+  --text-color-dark: #e0e0e0;
+  --link-color-dark: #82aaff;
+  --visited-color-dark: #c792ea;
+  --border-color-dark: #333;
+}
+
+body.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+
+  a {
+    color: var(--link-color-dark);
+    &:visited {
+      color: var(--visited-color-dark);
+    }
+  }
+
+  .site-title,
+  .site-title:visited {
+    color: var(--text-color-dark);
+  }
+
+  .site-nav .page-link {
+    color: var(--text-color-dark);
+  }
+  
+  .site-nav .menu-icon > svg path {
+    fill: var(--text-color-dark);
+  }
+  
+  .site-footer {
+    border-top: 1px solid var(--border-color-dark);
+  }
+
+  code {
+    background-color: #333;
+    color: #f8f8f2;
+  }
+  
+  pre, .highlight {
+    background-color: #1e1e1e;
+    color: #f8f8f2;
+    border: 1px solid var(--border-color-dark);
+  }
+
+  /* Search Form Overrides */
+  #search-box {
+    background-color: #333;
+    border: 1px solid #555;
+    color: #eee;
+    padding: 2px 5px;
+  }
+  
+  #header-search-button {
+    background-color: #444;
+    color: #eee;
+    border: 1px solid #555;
+    padding: 2px 8px;
+    cursor: pointer;
+    
+    &:hover {
+      background-color: #555;
+    }
+  }
+
+  /* Dark Mode Toggle Button */
+  #dark-mode-toggle {
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin-right: 5px;
+    vertical-align: middle;
+    /* Ensure it aligns well with other nav items */
+    display: inline-block; 
+  }
+}

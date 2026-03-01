@@ -17,6 +17,7 @@
       </a>
 
       <div class="trigger">
+        <a class="page-link" href="#" id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</a>
         <a class="page-link" href="{{full_base_url }}/about">about/</a>
         <a class="page-link" href="{{full_base_url }}/categories">categories/</a>
         <form id="searchForm" onsubmit="event.preventDefault(); navigateToSearch()" style="display:inline;">
@@ -31,6 +32,24 @@
   </div>
 
 </header>
+
+<script src="{{ full_base_url }}/js/dark-mode.js"></script>
+<script>
+  // Immediate theme application to prevent flash
+  (function() {
+    const currentTheme = localStorage.getItem('theme');
+    const darkMode = currentTheme === 'dark' || (!currentTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    if (darkMode) {
+      document.body.classList.add('dark-mode');
+      // Attempt to update button immediately if possible
+      const btn = document.getElementById('dark-mode-toggle');
+      if (btn) {
+         btn.innerHTML = '☀️';
+         btn.setAttribute('aria-label', 'Switch to light mode');
+      }
+    }
+  })();
+</script>
 
 <script>
   function navigateToSearch() {
