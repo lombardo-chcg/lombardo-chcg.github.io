@@ -44,6 +44,13 @@ body.dark-mode {
   .site-nav .menu-icon > svg path {
     fill: var(--text-color-dark);
   }
+
+  @media screen and (max-width: 600px) {
+    .site-nav {
+      background-color: var(--bg-color-dark);
+      border: 1px solid var(--border-color-dark);
+    }
+  }
   
   .site-footer {
     border-top: 1px solid var(--border-color-dark);
