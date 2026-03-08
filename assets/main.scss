@@ -14,9 +14,15 @@ $base-font-family: 'Ubuntu', sans-serif;
   --link-color-light: #2a7ae2;
   --visited-color-light: #1756a9;
 
-  --bg-color-dark: #121212;
-  --text-color-dark: #e0e0e0;
-  --link-color-dark: #82aaff;
+  --bg-color-dark: #1f242A;          /* --bg */
+  --bg-secondary-dark: #323945;      /* --bg-secondary */
+  --text-color-dark: #adb5bd;        /* --text */
+  --text-secondary-dark: #9CA3AF;    /* --text-secondary */
+  --link-color-dark: #91A7FF;        /* --links */
+  --headings-color-dark: #74c0fc;    /* --headings */
+  --code-text-dark: #91A7FF;         /* --code-text */
+  --code-bg-dark: #1A1F35;           /* Syntax highlight bg */
+
   --visited-color-dark: #c792ea;
   --border-color-dark: #333;
 }
@@ -25,16 +31,20 @@ body.dark-mode {
   background-color: var(--bg-color-dark);
   color: var(--text-color-dark);
 
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--headings-color-dark);
+  }
+
   a {
     color: var(--link-color-dark);
     &:visited {
-      color: var(--visited-color-dark);
+      color: var(--link-color-dark);
     }
   }
 
   .site-title,
   .site-title:visited {
-    color: var(--text-color-dark);
+    color: var(--headings-color-dark);
   }
 
   .site-nav .page-link {
@@ -54,30 +64,44 @@ body.dark-mode {
   
   .site-footer {
     border-top: 1px solid var(--border-color-dark);
+    color: var(--text-secondary-dark);
   }
 
+  /* Inline Code */
   code {
-    background-color: #333;
-    color: #f8f8f2;
+    background-color: var(--bg-secondary-dark);
+    color: var(--code-text-dark);
   }
   
+  /* Reset for Code Blocks to remove double highlighting */
+  pre code,
+  .highlight code {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+    border: none;
+  }
+
+  /* Code Blocks */
   pre, .highlight {
-    background-color: #1e1e1e;
-    color: #f8f8f2;
+    background-color: var(--code-bg-dark);
+    color: #f2f0ec;
     border: 1px solid var(--border-color-dark);
   }
 
+  @import "syntax";
+
   /* Search Form Overrides */
   #search-box {
-    background-color: #333;
+    background-color: var(--bg-secondary-dark);
     border: 1px solid #555;
-    color: #eee;
+    color: var(--text-color-dark);
     padding: 2px 5px;
   }
   
   #header-search-button {
-    background-color: #444;
-    color: #eee;
+    background-color: var(--bg-secondary-dark);
+    color: var(--text-color-dark);
     border: 1px solid #555;
     padding: 2px 8px;
     cursor: pointer;
